@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Empleados>
+
+@{
+    ViewBag.Title = "ListarInactivos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleados Inactivos</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre)
+        </td>
+    </tr>
+}
+
+</table>

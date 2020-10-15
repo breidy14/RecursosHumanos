@@ -1,0 +1,96 @@
+﻿@model ProyectoFinal.Models.Empleados
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargos.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargos.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamentos.Nombre)
+        </dd>
+
+    </dl>
+</div>
+
+<h3>Asignaturas en curso</h3>
+
+<ul class="list-group">
+
+    @foreach (var c in Model.Permisos)
+    {
+        <li class="list-group-item">
+            @c.PermisoId
+        </li>
+    }
+</ul>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpleadoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

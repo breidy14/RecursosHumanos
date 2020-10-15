@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProyectoFinalEntities">
+    <EntitySetMapping Name="Cargos">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Cargos">
+        <MappingFragment StoreEntitySet="Cargos">
+          <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionesRol">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.FuncionesRol">
+        <MappingFragment StoreEntitySet="FuncionesRol">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NombreFun" ColumnName="NombreFun" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licencias">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Licencias">
+        <MappingFragment StoreEntitySet="Licencias">
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomina">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Nomina">
+        <MappingFragment StoreEntitySet="Nomina">
+          <ScalarProperty Name="NominaId" ColumnName="NominaId" />
+          <ScalarProperty Name="Agno" ColumnName="Agno" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalidaEmpleados">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.SalidaEmpleados">
+        <MappingFragment StoreEntitySet="SalidaEmpleados">
+          <ScalarProperty Name="SalidaId" ColumnName="SalidaId" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="TipoSalida" ColumnName="TipoSalida" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioRol">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.UsuarioRol">
+        <MappingFragment StoreEntitySet="UsuarioRol">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacaciones">
+      <EntityTypeMapping TypeName="ProyectoFinalModel.Vacaciones">
+        <MappingFragment StoreEntitySet="Vacaciones">
+          <ScalarProperty Name="VacacionesId" ColumnName="VacacionesId" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="CorrespondienteAgno" ColumnName="CorrespondienteAgno" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Licencias" FunctionName="ProyectoFinalModel.Store.sp_Licencias" />
+    <FunctionImportMapping FunctionImportName="sp_Nomina" FunctionName="ProyectoFinalModel.Store.sp_Nomina" />
+    <FunctionImportMapping FunctionImportName="sp_Permisos" FunctionName="ProyectoFinalModel.Store.sp_Permisos" />
+    <FunctionImportMapping FunctionImportName="sp_SalidaEmpleados" FunctionName="ProyectoFinalModel.Store.sp_SalidaEmpleados" />
+    <FunctionImportMapping FunctionImportName="sp_Vacaciones" FunctionName="ProyectoFinalModel.Store.sp_Vacaciones" />
+  </EntityContainerMapping>
+</Mapping>

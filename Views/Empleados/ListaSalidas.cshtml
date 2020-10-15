@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Empleados>
+
+@{
+    ViewBag.Title = "ListaSalidas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Salidas Empleados</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        @Html.Label("Seleccione el mes")
+        @Html.DropDownList("mes", new MultiSelectList(new[] { "enero", "febrero", "marzo", "abril", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre", }), "Mes", htmlAttributes: new { @class = "form-control" })
+        <input type="submit" name="Filtrar" value="Filtrar" class="btn btn-primary" />
+    </div>
+
+
+ 
+
+</form>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmpleadoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpleadoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpleadoId })
+        </td>
+    </tr>
+}
+
+</table>

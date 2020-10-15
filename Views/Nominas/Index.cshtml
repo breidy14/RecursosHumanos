@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Nomina>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nominas</h2>
+
+<div>
+    <form method="post">
+        <input type="text" placeholder="Año:(2019) o Mes:(Ene)" name="busqueda" />
+        <input type="submit" value="Buscar" />
+    </form>
+</div>
+
+<p>
+    @Html.ActionLink("Crear Nomina", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Agno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoTotal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NominaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NominaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NominaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model ProyectoFinal.Models.SalidaEmpleados
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SalidaEmpleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SalidaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

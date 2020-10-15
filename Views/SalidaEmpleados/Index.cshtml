@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProyectoFinal.Models.SalidaEmpleados>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Salidas Empleados</h2>
+
+<p>
+    @Html.ActionLink("Inactivar Empleado", "Create", new { area ="" }, new { @class = "btn btn-danger" })
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+        </td>
+    </tr>
+}
+
+</table>

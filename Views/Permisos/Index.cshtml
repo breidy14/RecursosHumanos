@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Permisos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Permisos</h2>
+
+<p>
+    @Html.ActionLink("Agregar Permiso", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Desde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentarios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hasta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentarios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PermisoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PermisoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PermisoId })
+        </td>
+    </tr>
+}
+
+</table>

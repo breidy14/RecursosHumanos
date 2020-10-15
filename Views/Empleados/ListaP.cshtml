@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Empleados>
+
+@{
+    ViewBag.Title = "ListaP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Permisos</h2>
+
+    <p class="text-danger">
+        @ViewBag.Error
+    </p>
+
+
+<div>
+    <form action="@Url.Content("~/Empleados/Permisos")" method="post">
+        <input type="text" placeholder="Inserte un id" name="busqueda" />
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </form>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Permisos","Permisos", new { id=item.EmpleadoId }, new { @classs = "btn btn-primary"})
+        </td>
+    </tr>
+}
+
+</table>

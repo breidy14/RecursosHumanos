@@ -1,0 +1,49 @@
+﻿@model ProyectoFinal.Models.Nomina
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Nomina</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoTotal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
